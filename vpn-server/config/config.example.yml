@@ -1,0 +1,45 @@
+server:
+  port: 8000  # Using port 8000 as required
+  host: "0.0.0.0"
+  ssl:
+    enabled: false
+    cert_file: "/root/cert/cert.pem"
+    key_file: "/root/cert/key.pem"
+
+database:
+  type: "sqlite3"
+  path: "data/vpn.db"
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  db: 0
+
+security:
+  session_timeout: 7200
+  jwt_secret: "change_this_to_a_secure_secret"
+  fail2ban:
+    enabled: true
+    max_retry: 5
+    ban_time: 3600
+
+device_tracking:
+  enabled: true
+  store_details:
+    - user_agent
+    - ip_address
+    - device_type
+    - operating_system
+    - browser
+    - screen_resolution
+    - timezone
+    - language
+  suspicious_activity:
+    max_devices_per_user: 3
+    notify_on_new_device: true
+    block_suspicious_ips: true
+    geo_fencing:
+      enabled: false
+      allowed_countries: []
+      blocked_countries: []
