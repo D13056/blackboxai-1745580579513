@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced VPN Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 font-[Inter]">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <nav class="bg-white w-64 px-4 py-6 border-r border-gray-200">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-shield-alt text-2xl text-emerald-600 mr-3"></i>
+                <h1 class="text-xl font-bold">VPN Panel</h1>
+            </div>
+            <ul class="space-y-2">
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg">
+                        <i class="fas fa-chart-line mr-3"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-users mr-3"></i>
+                        Users
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-network-wired mr-3"></i>
+                        Connections
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-laptop mr-3"></i>
+                        Devices
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-shield-alt mr-3"></i>
+                        Security
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        <i class="fas fa-cog mr-3"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold">Dashboard</h2>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white p-2 rounded-lg shadow">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" class="w-8 h-8 rounded-full">
+                        <span class="text-gray-700">Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500">Active Users</h3>
+                        <i class="fas fa-users text-emerald-500"></i>
+                    </div>
+                    <p class="text-2xl font-bold">245</p>
+                    <p class="text-green-500 text-sm"><i class="fas fa-arrow-up"></i> 12% from last month</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500">Bandwidth Usage</h3>
+                        <i class="fas fa-chart-area text-blue-500"></i>
+                    </div>
+                    <p class="text-2xl font-bold">1.2 TB</p>
+                    <p class="text-red-500 text-sm"><i class="fas fa-arrow-down"></i> 5% from last month</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500">Connected Devices</h3>
+                        <i class="fas fa-laptop text-purple-500"></i>
+                    </div>
+                    <p class="text-2xl font-bold">892</p>
+                    <p class="text-green-500 text-sm"><i class="fas fa-arrow-up"></i> 8% from last month</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-gray-500">Security Alerts</h3>
+                        <i class="fas fa-shield-alt text-red-500"></i>
+                    </div>
+                    <p class="text-2xl font-bold">12</p>
+                    <p class="text-yellow-500 text-sm"><i class="fas fa-exclamation-triangle"></i> 3 high priority</p>
+                </div>
+            </div>
+
+            <!-- Device Tracking Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Connected Devices -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Connected Devices</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-2">Device</th>
+                                    <th class="text-left py-2">Location</th>
+                                    <th class="text-left py-2">Status</th>
+                                    <th class="text-left py-2">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-laptop text-gray-400 mr-2"></i>
+                                            MacBook Pro
+                                        </div>
+                                    </td>
+                                    <td>New York, US</td>
+                                    <td><span class="text-green-500">Active</span></td>
+                                    <td>
+                                        <button class="text-red-500 hover:text-red-700">
+                                            <i class="fas fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Add more device rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Security Alerts -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Security Alerts</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-red-50 rounded-lg">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">Suspicious Login Attempt</h4>
+                                <p class="text-sm text-gray-600">Multiple failed login attempts from IP: 192.168.1.100</p>
+                                <p class="text-xs text-gray-500 mt-1">2 minutes ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-yellow-50 rounded-lg">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-medium">New Device Connected</h4>
+                                <p class="text-sm text-gray-600">New iPhone device connected from London, UK</p>
+                                <p class="text-xs text-gray-500 mt-1">15 minutes ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traffic Analysis -->
+            <div class="bg-white p-6 rounded-lg shadow mb-8">
+                <h3 class="text-lg font-semibold mb-4">Traffic Analysis</h3>
+                <canvas id="trafficChart" height="100"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize traffic chart
+        const ctx = document.getElementById('trafficChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                datasets: [{
+                    label: 'Bandwidth Usage (GB)',
+                    data: [30, 45, 61, 58, 63, 60],
+                    borderColor: 'rgb(59, 130, 246)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
