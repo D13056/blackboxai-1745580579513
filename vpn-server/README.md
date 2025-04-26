@@ -60,35 +60,9 @@ A highly secure and customizable VPN server built on top of the 3x-ui project wi
 
 ## Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/vpn-server.git
-cd vpn-server
-```
+For detailed installation instructions on Ubuntu Server, please refer to [INSTALLATION.md](INSTALLATION.md).
 
-2. Install dependencies:
-```bash
-go mod download
-```
-
-3. Configure the application:
-```bash
-cp config/config.example.yml config/config.yml
-# Edit config.yml with your settings
-```
-
-4. Initialize the database:
-```bash
-sqlite3 data/vpn.db < database/schema.sql
-```
-
-5. Build and run:
-```bash
-go build
-./vpn-server
-```
-
-## Docker Installation
+For quick installation using Docker:
 
 1. Build the Docker image:
 ```bash
